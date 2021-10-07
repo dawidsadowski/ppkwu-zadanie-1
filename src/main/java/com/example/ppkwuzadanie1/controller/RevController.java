@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping
 public class RevController {
 
-    @GetMapping("{text}")
-    String getRevText(@PathVariable("text") String text) {
-        return text;
+    @GetMapping("/{text}")
+    StringBuffer getRevText(@PathVariable("text") String text) {
+        return new StringBuffer(text).reverse();
     }
 }
