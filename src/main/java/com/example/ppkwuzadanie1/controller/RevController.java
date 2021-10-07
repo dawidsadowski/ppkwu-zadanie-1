@@ -9,11 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class RevController {
 
-    @GetMapping()
-    String getHelpText() {
-        return "Aby skorzystać z usługi rev, wpisz tekst po ukośniku w URL żądania, np. /HelloWorld";
-    }
-
     @GetMapping("/{text}")
     StringBuffer getRevText(@PathVariable("text") String text) {
         return new StringBuffer(text).reverse();
